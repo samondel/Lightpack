@@ -123,7 +123,7 @@ bool PipewireGrabber::reallocate(const QList<ScreenInfo> &screens)
     grabScreen.imgData = m_buffers[0];
     grabScreen.imgDataSize = imagesize;
     grabScreen.bytesPerRow = pitch;
-    grabScreen.imgFormat = img.isOrderRgb ? BufferFormatRgba : BufferFormatArgb; // TODO BufferFormatArgb?
+    grabScreen.imgFormat = img.isOrderRgb ? BufferFormatAbgr : BufferFormatArgb; // TODO video format BGRA, but need to parse as ARGB?
     grabScreen.screenInfo = screens[0];
     grabScreen.associatedData = nullptr;
     _screensWithWidgets.append(grabScreen);
